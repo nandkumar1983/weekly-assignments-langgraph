@@ -1,0 +1,41 @@
+flowchart TD
+
+    START([START])
+
+    ISSUE["VPN Issue Reported: unable to connect vpn after database password change"]
+
+    AGENT1["Agent 1: Diagnosis Agent - Passes: 4"]
+
+    DECISION{"Enough Information?"}
+
+    AGENT2["Agent 2: Resolution Agent"]
+
+    KB1["KB Step 1: Restart the VPN Client"]
+
+    KB2["KB Step 2: Clear the DNS Cache"]
+
+    KB3["KB Step 3: Reset the Network Adapter"]
+
+    FINAL["Generate Final Resolution"]
+
+    END([END])
+
+    START --> ISSUE
+
+    ISSUE --> AGENT1
+
+    AGENT1 --> DECISION
+
+    DECISION -->|No| AGENT2
+
+    AGENT2 --> KB1
+
+    KB1 --> KB2
+
+    KB2 --> KB3
+
+    KB3 -->|Re-evaluate| AGENT1
+
+    DECISION -->|Yes| FINAL
+
+    FINAL --> END

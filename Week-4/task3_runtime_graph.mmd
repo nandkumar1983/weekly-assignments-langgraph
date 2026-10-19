@@ -1,0 +1,50 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+flowchart TD
+
+    START(["START"])
+
+    ROUTER1["<b>Router 1</b><br/><br/>Operation: -<br/>Selected route:<br/>subtract_node: 45 - 89 = -44"]
+
+    ADD1["<b>add_node</b><br/><br/>45 + 89<br/>Result: 134"]
+
+    SUBTRACT1["<b>subtract_node</b><br/><br/>45 - 89<br/>Result: -44"]
+
+    ROUTER2["<b>Router 2</b><br/><br/>Operation 2: +<br/>Selected route:<br/>add_node2: 34 + 22 = 56"]
+
+    ADD2["<b>add_node2</b><br/><br/>34 + 22<br/>Result: 56"]
+
+    SUBTRACT2["<b>subtract_node2</b><br/><br/>34 - 22<br/>Result: 12"]
+
+    END(["END<br/><br/>finalNumber = -44; finalNumber2 = 56"])
+
+    START --> ROUTER1
+
+    ROUTER1 -->|"+"| ADD1
+    ROUTER1 -->|"-"| SUBTRACT1
+
+    ADD1 --> ROUTER2
+    SUBTRACT1 --> ROUTER2
+
+    ROUTER2 -->|"+"| ADD2
+    ROUTER2 -->|"-"| SUBTRACT2
+
+    ADD2 --> END
+    SUBTRACT2 --> END
+
+    classDef startNode fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20;
+    classDef routerNode fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#0D47A1;
+    classDef selectedNode fill:#FFF3CD,stroke:#FF8F00,stroke-width:4px,color:#5D4037;
+    classDef mutedNode fill:#F5F5F5,stroke:#BDBDBD,stroke-width:1px,color:#9E9E9E,stroke-dasharray:5 5;
+    classDef endNode fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px,color:#4A148C;
+
+    class START startNode;
+    class ROUTER1,ROUTER2 routerNode;
+    class ADD1 mutedNode;
+    class SUBTRACT1 selectedNode;
+    class ADD2 selectedNode;
+    class SUBTRACT2 mutedNode;
+    class END endNode;

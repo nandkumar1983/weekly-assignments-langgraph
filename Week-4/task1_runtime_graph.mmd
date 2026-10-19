@@ -1,0 +1,23 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+flowchart TD
+
+    START(["START"])
+
+    CALCULATOR["<b>Calculate Sum or Product</b><br/><br/>Name: Add 4 and 5<br/>Values: [6, 7]<br/>Operation: Addition<br/><br/>6 + 7 = 13<br/><br/>Hi Add 4 and 5, your answer is: 13"]
+
+    END(["END"])
+
+    START --> CALCULATOR
+    CALCULATOR --> END
+
+    classDef startNode fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20;
+    classDef processNode fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#0D47A1;
+    classDef endNode fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px,color:#4A148C;
+
+    class START startNode;
+    class CALCULATOR processNode;
+    class END endNode;

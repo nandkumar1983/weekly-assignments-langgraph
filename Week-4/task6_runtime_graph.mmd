@@ -1,0 +1,33 @@
+flowchart TD
+
+    START([START])
+
+    GENRE["User Genre: Drama"]
+
+    AGENT["LLM Agent: Decide whether a tool is required"]
+
+    DECISION{"Use Movie Tool?"}
+
+    TOOL["Movie Recommendation Tool: Search local dataset"]
+
+    TOOLRESULT["Tool Result Returned"]
+
+    RESPONSE["LLM Response: Hi there! Based on your request for a Drama movie, I recommend the highest-rated movie from our local dataset:  **Primary Recommendation:** - **Title:** The Shawshank Redemption - **Genre:** Drama - **Year:** 1994 - **Ra..."]
+
+    END([END])
+
+    START --> GENRE
+
+    GENRE --> AGENT
+
+    AGENT --> DECISION
+
+    DECISION -->|Yes| TOOL
+
+    TOOL --> TOOLRESULT
+
+    TOOLRESULT --> AGENT
+
+    AGENT --> RESPONSE
+
+    RESPONSE --> END

@@ -1,0 +1,37 @@
+flowchart TD
+
+    START([START])
+
+    QUESTION["Student Question: 5th class admission"]
+
+    TRIAGE["Question Triage: Admission-related question detected."]
+
+    DECISION{"Admission Question?"}
+
+    RETRIEVE["Retrieve from ChromaDB: Retrieved 4 relevant admission handbook chunks."]
+
+    CHROMA["Admission Handbook Knowledge Base"]
+
+    GENERATE["Generate Grounded Answer"]
+
+    ANSWER["Final Answer: The requested information was not found in the Admission Handbook.  Page numbers: 1, 2"]
+
+    END([END])
+
+    START --> QUESTION
+
+    QUESTION --> TRIAGE
+
+    TRIAGE --> DECISION
+
+    DECISION -->|Yes| RETRIEVE
+
+    RETRIEVE --> CHROMA
+
+    CHROMA --> RETRIEVE
+
+    RETRIEVE --> GENERATE
+
+    GENERATE --> ANSWER
+
+    ANSWER --> END

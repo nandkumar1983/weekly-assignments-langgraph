@@ -1,0 +1,26 @@
+flowchart TD
+
+    START([START])
+
+    QUESTION["User Question: Which employees are avaliable ?"]
+
+    AGENT["LLM Agent"]
+
+    DECISION{"Employee MCP Tool Required?"}
+
+    TOOL["MCP Tool: list_employee_names"]
+
+    DATA["Employee Data Returned"]
+
+    ANSWER["Final Answer: The available employees in the directory are 'Vaishali' and 'Rupali Giri'."]
+
+    END([END])
+
+    START --> QUESTION
+    QUESTION --> AGENT
+    AGENT --> DECISION
+    DECISION -->|Yes| TOOL
+    TOOL --> DATA
+    DATA --> AGENT
+    AGENT --> ANSWER
+    ANSWER --> END

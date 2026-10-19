@@ -1,0 +1,33 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+flowchart TD
+
+    START(["START"])
+
+    GREETING["<b>Node 1: Greeting Generator</b><br/><br/>Input Name: njadhav<br/><br/>Output:<br/>njadhav, welcome to the system!"]
+
+    AGE["<b>Node 2: Age Describer</b><br/><br/>Input Age: 43<br/><br/>Output:<br/>You are 43 years old!"]
+
+    SKILLS["<b>Node 3: Skills Formatter</b><br/><br/>Input Skills: Python, java and AWS<br/><br/>Output:<br/>You have skills in: Python and java and AWS<br/><br/><b>Final Result:</b><br/>njadhav, welcome to the system! You are 43 years old! You have skills in: Python and java and AWS"]
+
+    END(["END"])
+
+    START --> GREETING
+    GREETING --> AGE
+    AGE --> SKILLS
+    SKILLS --> END
+
+    classDef startNode fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20;
+    classDef greetingNode fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#0D47A1;
+    classDef ageNode fill:#FFF8E1,stroke:#F9A825,stroke-width:2px,color:#E65100;
+    classDef skillsNode fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px,color:#4A148C;
+    classDef endNode fill:#ECEFF1,stroke:#455A64,stroke-width:2px,color:#263238;
+
+    class START startNode;
+    class GREETING greetingNode;
+    class AGE ageNode;
+    class SKILLS skillsNode;
+    class END endNode;

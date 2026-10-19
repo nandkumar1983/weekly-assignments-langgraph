@@ -1,0 +1,10 @@
+langchain
+langchain-openai
+python-dotenv
+sqlalchemy
+psycopg2-binary
+langchain-community
+wikipedia
+psycopg
+fastmcp
+langchain-mcp-adapters
