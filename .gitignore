@@ -1,0 +1,38 @@
+# Python virtual environments
+.venv/
+venv/
+ENV/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Env files
+.env
+
+# VS Code settings
+.vscode/
+
+# Database files
+*.sqlite3
+*.db
+Week-3/chroma_technical_db/
+Week-4/admission_chroma_db/
+
+# Jupyter
+.ipynb_checkpoints
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Cache
+.pytest_cache/
+.mypy_cache/
+pip-wheel-metadata/
